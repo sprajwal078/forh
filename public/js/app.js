@@ -36,8 +36,22 @@ app.controller('ContactController', ['$scope', '$rootScope', function($scope, $r
     $rootScope.showBanner = false;
 }]);
 
-app.controller('HomeMembersController', ['$scope', '$rootScope', function($scope, $rootScope){
+app.controller('HomeMembersController', ['$scope', '$rootScope', '$http', function($scope, $rootScope, $http){
     $scope.currentBloodType = 'A-';
+
+    $http.get('/getavailableuserlist').
+      success(function(data, status, headers, config) {
+        console.log(data);
+        
+        // this callback will be called asynchronously
+        // when the response is available
+      }).
+      error(function(data, status, headers, config) {
+        console.log(data);
+        // called asynchronously if an error occurs
+        // or server returns response with an error status.
+      });
+
     $scope.members = [
         {
             name: 'Prajwal Simkhada',
