@@ -1,0 +1,8 @@
+database tables:
+
+member('id', 'name', 'blood-group', 'dob', 'gender', 'address', 'phone', 'mobile1', 'mobile2', 'member_type', 'post', 'active', 'registered_on','pic', 'updated_at', 'is_deleted')
+
+
+donation('id', 'date')
+
+member_donation ('mem_id', 'don_id', 'amount')

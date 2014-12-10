@@ -1,0 +1,84 @@
+<div>
+  <!-- about us -->  
+  <div class="row">
+    <div class="col-xs-12">
+      <article class="about">
+        <h2>About Us</h2>  
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p><a href="#">See Our Board Members</a></p>
+      </article>   
+    </div>
+  </div>
+  <!-- about us -->
+  <div class="spacer"></div>
+
+  <h3>SELECT YOUR BLOOD TYPE TO SEE OUR MEMBERS</h3>
+  <!-- main body -->
+  <div class="row" ng-controller="HomeMembersController">
+    <!-- left section -->
+    <aside class="col-md-3 col-sm-4">
+      <div class="pouch full-width rel div-xs-center">
+        <div class="div-center pouch-circle">&nbsp;</div>
+        <p class="pouch-header">Blood Types</p>
+        <div class="pouch-inner">
+          <ul class="text-center rel">
+            <li><a href="#tbl" ng-click="getMember('A-')">A-</a><span class="bar"></span></li>                                
+            <li><a href="#tbl" ng-click="getMember('B-')">B-</a><span class="bar"></span></li>
+            <li><a href="#tbl" ng-click="getMember('AB-')">AB-</a><span class="bar"></span></li>
+            <li><a href="#tbl" ng-click="getMember('O-')">O-</a></li>
+          </ul>
+        </div>
+        <span class="outlet-inner"></span>
+        <span class="outlet-inner2"></span>            
+        <span class="cork"></span>
+        <span class="cork2"></span>
+        <span class="outlet"></span>
+        <span class="outlet2"></span>
+      </div>          
+      <div class="spacer"></div>
+      <div class="spacer"></div>
+    </aside>        
+    <!-- left section -->
+
+    <!-- right section -->    
+    <section class="col-md-9 col-sm-8">
+      <h4>Current Blood Type is: {{currentBloodType}}</h4>
+      <div class="table-responsive">
+        <table class="table text-center" id="tbl">
+          <thead>
+            <tr>
+              <th class="text-center-imp">SN.</th>
+              <th class="text-center-imp">Name</th>
+              <th class="text-center-imp">Gender</th>
+              <th class="text-center-imp">Address</th>
+              <th class="text-center-imp">Contact Number</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="info" ng-repeat="member in members">
+              <td>1.</td>
+              <td> {{member.name}} </td>
+              <td> {{member.gender}}</td>
+              <td>{{member.address}}</td>
+              <td>{{member.contact}}</td>
+            </tr>           
+          </tbody>
+        </table>
+      </div>
+    </section>
+    <!-- right section -->
+  </div>
+  <!-- main body -->      
+  <div class="spacer"></div>
+</div>
